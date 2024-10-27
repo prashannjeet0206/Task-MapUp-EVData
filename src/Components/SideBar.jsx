@@ -6,7 +6,7 @@ import { div } from "framer-motion/client";
 
 const SideBar_Item = [
   { name: "DashBoard", href: "/" },
-  { name: "EVMakes", href: "/bar" },
+  //   { name: "EVMakes", href: "/bar" },
 ];
 
 const SideBar = () => {

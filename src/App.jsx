@@ -23,7 +23,7 @@ function App() {
       <SideBar />
       <Routes>
         <Route path="/" element={<DashBoard data={evData} />} />
-        <Route path="/bar" element={<EVRegistration />} />
+        {/* <Route path="/bar" element={<EVRegistration />} /> */}
       </Routes>
     </div>
   );
