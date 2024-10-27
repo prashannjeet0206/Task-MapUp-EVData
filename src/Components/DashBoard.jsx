@@ -5,6 +5,7 @@ import { Zap } from "lucide-react";
 import EVRegistration from "./Charts/EVRegistration";
 import PopularEV from "./Charts/PopularEV";
 import TypeDistribution from "./Charts/TypeDistribution";
+import TableView from "./TableView";
 
 const DashBoard = ({ data }) => {
   return (
@@ -29,6 +30,9 @@ const DashBoard = ({ data }) => {
           <EVRegistration data={data} />
           <PopularEV data={data} />
           <TypeDistribution data={data} />
+        </div>
+        <div>
+          <TableView data={data} />
         </div>
       </main>
     </div>
