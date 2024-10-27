@@ -9,9 +9,11 @@ import {
 } from "recharts";
 
 const TypeDistribution = ({ data }) => {
-  const evType = data.reduce((acc, car) => {
-    acc[car["Electric Vehicle Type"]] =
-      (acc[car["Electric Vehicle Type"]] || 0) + 1;
+  const processedData = Array.isArray(data) ? data : [];
+
+  const evType = processedData.reduce((acc, car) => {
+    const type = car["Electric Vehicle Type"] || "Unknown";
+    acc[type] = (acc[type] || 0) + 1;
     return acc;
   }, {});
 
@@ -21,6 +23,7 @@ const TypeDistribution = ({ data }) => {
   }));
 
   const COLORS = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0"];
+
   return (
     <motion.div
       className="bg-gray-800 bg-opacity-50 shadow-lg rounded-xl p-6 border border-gray-700"

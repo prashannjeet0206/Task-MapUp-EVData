@@ -11,17 +11,23 @@ import {
 import { motion } from "framer-motion";
 
 const EVRegistration = ({ data }) => {
-  const evRegistrationYear = data.reduce((acc, car) => {
+  const processedData = Array.isArray(data) ? data : [];
+
+  const evRegistrationYear = processedData.reduce((acc, car) => {
     const year = car["Model Year"];
-    acc[year] = (acc[year] || 0) + 1;
+    if (year) {
+      acc[year] = (acc[year] || 0) + 1;
+    }
     return acc;
   }, {});
+
   const chartData = Object.keys(evRegistrationYear)
     .sort()
     .map((year) => ({
       year,
       registrations: evRegistrationYear[year],
     }));
+
   return (
     <motion.div
       className="bg-gray-800 bg-opacity-50 shadow-lg rounded-xl p-6 border border-gray-700 mt-10"
@@ -33,7 +39,7 @@ const EVRegistration = ({ data }) => {
         EV Registrations Yearly
       </h2>
       <div className="h-80">
-        <ResponsiveContainer width={"100%"} height={"100%"}>
+        <ResponsiveContainer width="100%" height="100%">
           <LineChart data={chartData}>
             <CartesianGrid strokeDasharray="3 3" stroke="#4B5563" />
             <Line
@@ -51,7 +57,7 @@ const EVRegistration = ({ data }) => {
                 backgroundColor: "rgba(31,41,55,0.8)",
                 borderColor: "#4B5563",
               }}
-              itemStyle={{ color: "E5E7EB" }}
+              itemStyle={{ color: "#E5E7EB" }}
             />
           </LineChart>
         </ResponsiveContainer>
