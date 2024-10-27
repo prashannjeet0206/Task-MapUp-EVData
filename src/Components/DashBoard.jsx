@@ -27,7 +27,7 @@ const DashBoard = ({ data }) => {
         {/* charts */}
         <div className="grid grid-cols-1 gap-8">
           <EVRegistration data={data} />
-          <PopularEV />
+          <PopularEV data={data} />
           <TypeDistribution data={data} />
         </div>
       </main>

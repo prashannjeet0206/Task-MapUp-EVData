@@ -32,7 +32,7 @@ const TypeDistribution = ({ data }) => {
         EV-Type Distribution
       </h2>
       <div className="h-80">
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={300}>
           <PieChart>
             <Pie
               data={chartData}
