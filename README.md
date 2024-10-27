@@ -1,8 +1,21 @@
-# React + Vite
+## Task-DashBoard EV Population Data
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1.  To run the Project on your system  
+     **run git clone**
+    https://github.com/prashannjeet0206/Task-MapUp-EVData.git
+2.  **npm init**-will install all the dependencies
+3.  **npm run dev**-will host the project http://localhost:5174/
+4.  **npm run build**- to get the build of the project
+5.  Project is hosted on https://task-map-up-ev-data.vercel.app/
 
-Currently, two official plugins are available:
+#Tools and Technology used
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1.  Reactjs
+2.  Rechart for charts
+3.  Lucide-react for icons
+4.  Vite as bundler
+5.  Papaparse-csv to json
+6.  framer motion
+
+#About The Project
+Given data of EV Population and have drawn insights from the data and have depicted the data for the user in Barcharts,LineCharts,PieCharts,Table.
