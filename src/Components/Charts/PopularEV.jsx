@@ -11,8 +11,11 @@ import {
 } from "recharts";
 
 const PopularEV = ({ data }) => {
-  const MakeCount = data.reduce((acc, car) => {
-    acc[car.Make] = (acc[car.Make] || 0) + 1;
+  const processedData = Array.isArray(data) ? data : [];
+
+  const MakeCount = processedData.reduce((acc, car) => {
+    const make = car.Make || "Unknown";
+    acc[make] = (acc[make] || 0) + 1;
     return acc;
   }, {});
 
@@ -20,6 +23,7 @@ const PopularEV = ({ data }) => {
     make,
     count: MakeCount[make],
   }));
+
   return (
     <motion.div
       className="bg-gray-800 bg-opacity-50 shadow-lg rounded-xl p-6 border border-gray-700 mb-5"
